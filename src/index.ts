@@ -6,8 +6,8 @@ export const handle = async (event) => {
   logger.info(event, 'Incoming event')
   return {
     statusCode: 200,
-    body: {
+    body: JSON.stringify({
       message: 'Hello there stranger'
-    },
+    }),
   };
 }

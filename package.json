@@ -1,5 +1,10 @@
 {
   "type": "module",
+  "scripts": {
+    "esbuild": "npx esbuild src/index.ts --bundle --sourcemap --platform=node --target=es2020 --outdir=artifacts/src",
+    "zip": "cd artifacts && zip -r lambda.zip src",
+    "package:manual": "rm -rf artifacts && npm run esbuild && npm run zip"
+  },
   "devDependencies": {
     "serverless": "^4.4.19"
   },

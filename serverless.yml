@@ -1,5 +1,10 @@
 service: serverless-esbuild-issues
 
+## Uncomment below for manual bundling with esbuild
+# package:
+#   artifact: artifacts/lambda.zip
+
+## Uncomment below for serverless esbuild scenario
 build:
   esbuild:
     bundle: true
