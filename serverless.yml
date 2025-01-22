@@ -8,7 +8,7 @@ service: serverless-esbuild-issues
 build:
   esbuild:
     bundle: true
-    target: node20
+    target: es2020
     platform: node
     sourcemap:
       type: linked
