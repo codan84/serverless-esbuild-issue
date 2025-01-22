@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "devDependencies": {
+    "serverless": "^4.4.19"
+  },
+  "dependencies": {
+    "pino": "^9.6.0"
+  }
+}

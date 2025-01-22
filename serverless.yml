@@ -1,0 +1,27 @@
+service: serverless-esbuild-issues
+
+build:
+  esbuild:
+    bundle: true
+    target: node20
+    platform: node
+    sourcemap:
+      type: linked
+      setNodeOptions: true
+
+provider:
+  name: aws
+  stage: ${opt:stage, 'dev'}
+  region: ${opt:region, 'eu-west-2'}
+  runtime: nodejs22.x
+  logs:
+    lambda:
+      logFormat: JSON
+
+functions:
+  user:
+    handler: src/index.handle
+    events:
+      - httpApi:
+          path: /
+          method: get
